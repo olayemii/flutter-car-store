@@ -74,19 +74,19 @@ class _CarsModalState extends State<CarsModal>
   List<AnimationItem> animationItems = [
     AnimationItem(
       id: "slide-1",
-      entry: 10,
+      entry: 30,
       entryDuration: 300,
       visible: false,
     ),
     AnimationItem(
       id: "slide-2",
-      entry: 20,
+      entry: 30,
       entryDuration: 300,
       visible: false,
     ),
     AnimationItem(
       id: "slide-3",
-      entry: 30,
+      entry: 38,
       entryDuration: 300,
       visible: false,
     ),
@@ -98,49 +98,49 @@ class _CarsModalState extends State<CarsModal>
     ),
     AnimationItem(
       id: "slide-5",
-      entry: 50,
+      entry: 43,
       entryDuration: 300,
       visible: false,
     ),
     AnimationItem(
       id: "slide-6",
-      entry: 60,
+      entry: 46,
       entryDuration: 300,
       visible: false,
     ),
     AnimationItem(
       id: "slide-7",
-      entry: 70,
+      entry: 49,
       entryDuration: 300,
       visible: false,
     ),
     AnimationItem(
       id: "slide-8",
-      entry: 80,
+      entry: 52,
       entryDuration: 300,
       visible: false,
     ),
     AnimationItem(
       id: "slide-9",
-      entry: 90,
+      entry: 55,
       entryDuration: 300,
       visible: false,
     ),
     AnimationItem(
       id: "slide-10",
-      entry: 100,
+      entry: 58,
       entryDuration: 300,
       visible: false,
     ),
     AnimationItem(
       id: "slide-11",
-      entry: 110,
+      entry: 61,
       entryDuration: 300,
       visible: false,
     ),
     AnimationItem(
       id: "slide-12",
-      entry: 120,
+      entry: 64,
       entryDuration: 300,
       visible: false,
     ),
@@ -153,7 +153,7 @@ class _CarsModalState extends State<CarsModal>
       duration: Duration(milliseconds: 600),
       vsync: this,
     );
-    animation = Tween<double>(begin: 0, end: 120).animate(animationController)
+    animation = Tween<double>(begin: 0, end: 65).animate(animationController)
       ..addListener(() {
         setState(() {
           animationItems = updateVisibleState(animationItems, animation.value);
@@ -172,7 +172,7 @@ class _CarsModalState extends State<CarsModal>
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500.0,
+      height: 520.0,
       padding: EdgeInsets.symmetric(
         vertical: 30.0,
       ),
@@ -290,7 +290,7 @@ class _CarsModalState extends State<CarsModal>
             ),
           ),
           SizedBox(
-            height: 15.0,
+            height: 35.0,
           ),
           FadeSlide(
             direction: !getItemVisibility("slide-12", animationItems),

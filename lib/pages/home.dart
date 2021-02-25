@@ -16,11 +16,11 @@ class Home extends StatefulWidget {
 List<String> carlogos = [
   "assets/bmw.png",
   "assets/mercedes.png",
+  "assets/porsche.png",
+  "assets/vw.png",
   "assets/bmw.png",
   "assets/mercedes.png",
-  "assets/bmw.png",
-  "assets/mercedes.png",
-  "assets/bmw.png",
+  "assets/porsche.png",
   "assets/mercedes.png",
 ];
 
@@ -191,13 +191,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             duration:
                                 getSlideDuration("slide-4", animationItems),
                             child: AnimatedContainer(
+                              padding: EdgeInsets.all(20.0),
                               duration: Duration(milliseconds: 300),
-                              height: activePage == index
-                                  ? 180.0
-                                  : 120.0 - pageScrollValue,
-                              width: activePage == index
-                                  ? 180.0
-                                  : 120.0 - pageScrollValue,
+                              height: activePage == index ? 180.0 : 120.0,
+                              width: activePage == index ? 180.0 : 120.0,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: Color(0xFFE4E4EE),

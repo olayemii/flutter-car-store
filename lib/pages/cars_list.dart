@@ -3,6 +3,7 @@ import 'package:car_store/pages/car_detail.dart';
 import 'package:car_store/widgets/cars_modal.dart';
 import 'package:car_store/widgets/fade_slide.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_remixicon/flutter_remixicon.dart';
 
 class CarsList extends StatefulWidget {
   @override
@@ -79,6 +80,9 @@ class _CarsListState extends State<CarsList>
                           border: Border.all(
                             color: Colors.grey[300],
                           ),
+                        ),
+                        child: Icon(
+                          MIcon.riMenu2Line,
                         ),
                       ),
                       Spacer(),
