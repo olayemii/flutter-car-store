@@ -10,12 +10,32 @@ class CarDetail extends StatefulWidget {
   _CarDetailState createState() => _CarDetailState();
 }
 
-List<Color> colors = [
-  Colors.red[900],
-  Colors.blueAccent,
-  Colors.black,
-  Colors.green[900],
-  Colors.purple[900],
+List<Map> colors = [
+  {
+    "name": "black",
+    "color": Colors.black,
+    "asset": Image.asset("assets/carbig-black.png"),
+  },
+  {
+    "name": "green",
+    "color": Colors.green,
+    "asset": Image.asset("assets/carbig-green.png"),
+  },
+  {
+    "name": "grey",
+    "color": Colors.grey,
+    "asset": Image.asset("assets/carbig-grey.png"),
+  },
+  {
+    "name": "purple",
+    "color": Colors.purple,
+    "asset": Image.asset("assets/carbig-purple.png"),
+  },
+  {
+    "name": "red",
+    "color": Colors.red,
+    "asset": Image.asset("assets/carbig.png"),
+  }
 ];
 
 class _CarDetailState extends State<CarDetail>
@@ -23,6 +43,7 @@ class _CarDetailState extends State<CarDetail>
   AnimationController animationController;
   Animation animation;
   List<AnimationItem> animationItems = [];
+  int selectedIndex = 0;
   @override
   void initState() {
     animationController = AnimationController(
@@ -154,15 +175,19 @@ class _CarDetailState extends State<CarDetail>
                       SizedBox(
                         height: 30.0,
                       ),
-                      FadeSlide(
-                        direction: getItemVisibility("slide-3", animationItems),
-                        offsetX: 0.0,
-                        offsetY: 60,
-                        duration: getSlideDuration("slide-3", animationItems),
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Image.asset(
-                            "assets/carbig.png",
+                      Expanded(
+                        child: FadeSlide(
+                          direction:
+                              getItemVisibility("slide-3", animationItems),
+                          offsetX: 0.0,
+                          offsetY: 60,
+                          duration: getSlideDuration("slide-3", animationItems),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: AnimatedSwitcher(
+                              duration: Duration(milliseconds: 80000),
+                              child: colors[selectedIndex]["asset"],
+                            ),
                           ),
                         ),
                       )
@@ -170,150 +195,160 @@ class _CarDetailState extends State<CarDetail>
                   ),
                 ),
               ),
-              FadeSlide(
-                direction: getItemVisibility("slide-4", animationItems),
-                offsetX: 0.0,
-                offsetY: 60,
-                duration: getSlideDuration("slide-4", animationItems),
-                child: Container(
-                  height: 360.0,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(50.0),
-                      topRight: Radius.circular(50.0),
+              Expanded(
+                child: FadeSlide(
+                  direction: getItemVisibility("slide-4", animationItems),
+                  offsetX: 0.0,
+                  offsetY: 60,
+                  duration: getSlideDuration("slide-4", animationItems),
+                  child: Container(
+                    height: 360.0,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(50.0),
+                        topRight: Radius.circular(50.0),
+                      ),
                     ),
-                  ),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 24.0,
-                    vertical: 32.0,
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          getActiveTab(
-                            Text(
-                              "Inspire",
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 24.0,
+                      vertical: 32.0,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            getActiveTab(
+                              Text(
+                                "Inspire",
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
+                              true,
                             ),
-                            true,
-                          ),
-                          SizedBox(
-                            width: 15.0,
-                          ),
-                          getActiveTab(
-                            Text(
-                              "Inform",
-                              style: TextStyle(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black.withOpacity(.5),
+                            SizedBox(
+                              width: 15.0,
+                            ),
+                            getActiveTab(
+                              Text(
+                                "Inform",
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black.withOpacity(.5),
+                                ),
                               ),
+                              false,
                             ),
-                            false,
-                          ),
-                          SizedBox(
-                            width: 15.0,
-                          ),
-                          getActiveTab(
-                            Text(
-                              "Technical Data",
-                              style: TextStyle(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black.withOpacity(.5),
+                            SizedBox(
+                              width: 15.0,
+                            ),
+                            getActiveTab(
+                              Text(
+                                "Technical Data",
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black.withOpacity(.5),
+                                ),
                               ),
+                              false,
                             ),
-                            false,
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 25.0,
-                      ),
-                      Text(
-                        "A modal bottom sheet is an alternative to a menu or a dialog and ... do it using the default showModalBottomSheet",
-                        style: TextStyle(
-                          color: Colors.black.withOpacity(.5),
-                          fontSize: 16.0,
-                          height: 1.5,
+                          ],
                         ),
-                      ),
-                      SizedBox(
-                        height: 15.0,
-                      ),
-                      Divider(),
-                      SizedBox(
-                        height: 15.0,
-                      ),
-                      Row(
-                        children: colors.map((color) {
-                          int index = colors.indexOf(color);
-                          return Container(
-                            width: 35.0,
-                            height: 35.0,
-                            margin: EdgeInsets.only(right: 10.0),
-                            decoration: BoxDecoration(
-                              color: color,
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: index == 1
-                                    ? kPrimaryColor
-                                    : Colors.transparent,
-                                width: 2.0,
-                              ),
-                            ),
-                          );
-                        }).toList(),
-                      ),
-                      SizedBox(
-                        height: 20.0,
-                      ),
-                      Row(
-                        children: [
-                          Container(
-                            width: 50.0,
-                            height: 50.0,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Colors.grey[400],
-                              ),
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            child: Icon(
-                              FlutterIcons.heart_fea,
-                            ),
+                        SizedBox(
+                          height: 25.0,
+                        ),
+                        Text(
+                          "A modal bottom sheet is an alternative to a menu or a dialog and ... do it using the default showModalBottomSheet",
+                          style: TextStyle(
+                            color: Colors.black.withOpacity(.5),
+                            fontSize: 16.0,
+                            height: 1.5,
                           ),
-                          SizedBox(
-                            width: 20.0,
-                          ),
-                          Expanded(
-                            child: Container(
-                              width: MediaQuery.of(context).size.width * .7,
+                        ),
+                        SizedBox(
+                          height: 15.0,
+                        ),
+                        Divider(),
+                        SizedBox(
+                          height: 15.0,
+                        ),
+                        Row(
+                          children: colors.map((color) {
+                            int index = colors.indexOf(color);
+                            return GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  selectedIndex = index;
+                                });
+                              },
+                              child: Container(
+                                width: 35.0,
+                                height: 35.0,
+                                margin: EdgeInsets.only(right: 10.0),
+                                decoration: BoxDecoration(
+                                  color: color["color"],
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: index == selectedIndex
+                                        ? kPrimaryColor
+                                        : Colors.transparent,
+                                    width: 4.0,
+                                  ),
+                                ),
+                              ),
+                            );
+                          }).toList(),
+                        ),
+                        SizedBox(
+                          height: 30.0,
+                        ),
+                        Row(
+                          children: [
+                            Container(
+                              width: 50.0,
+                              height: 50.0,
                               decoration: BoxDecoration(
-                                color: kPrimaryColor,
-                                borderRadius: BorderRadius.circular(24.0),
+                                border: Border.all(
+                                  color: Colors.grey[400],
+                                ),
+                                borderRadius: BorderRadius.circular(12.0),
                               ),
-                              child: FlatButton(
-                                padding: EdgeInsets.symmetric(vertical: 22.0),
-                                onPressed: () {},
-                                child: Text(
-                                  "Checkout",
-                                  style: TextStyle(
-                                    color: Colors.white,
+                              child: Icon(
+                                FlutterIcons.heart_fea,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 20.0,
+                            ),
+                            Expanded(
+                              child: Container(
+                                width: MediaQuery.of(context).size.width * .7,
+                                decoration: BoxDecoration(
+                                  color: kPrimaryColor,
+                                  borderRadius: BorderRadius.circular(24.0),
+                                ),
+                                child: FlatButton(
+                                  padding: EdgeInsets.symmetric(vertical: 22.0),
+                                  onPressed: () {},
+                                  child: Text(
+                                    "Checkout",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
-                      )
-                    ],
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
               )

@@ -8,7 +8,24 @@ import 'package:flutter/material.dart';
 final List<Car> cars = [
   Car(
     image: Image.asset(
-      "assets/car1.png",
+      "assets/car3.png",
+      width: 150.0,
+    ),
+    name: "BMW 3 Series",
+    stock: 6,
+  ),
+  Car(
+    image: Image.asset(
+      "assets/carbig.png",
+      width: 150.0,
+    ),
+    name: "BMW 3 Series",
+    stock: 6,
+  ),
+  Car(
+    image: Image.asset(
+      "assets/car4.png",
+      width: 150.0,
     ),
     name: "BMW 3 Series",
     stock: 6,
@@ -16,6 +33,31 @@ final List<Car> cars = [
   Car(
     image: Image.asset(
       "assets/car1.png",
+      width: 150.0,
+    ),
+    name: "BMW 3 Series",
+    stock: 6,
+  ),
+  Car(
+    image: Image.asset(
+      "assets/car3.png",
+      width: 150.0,
+    ),
+    name: "BMW 3 Series",
+    stock: 6,
+  ),
+  Car(
+    image: Image.asset(
+      "assets/carbig.png",
+      width: 150.0,
+    ),
+    name: "BMW 3 Series",
+    stock: 6,
+  ),
+  Car(
+    image: Image.asset(
+      "assets/car4.png",
+      width: 150.0,
     ),
     name: "BMW 3 Series",
     stock: 6,
@@ -23,41 +65,7 @@ final List<Car> cars = [
   Car(
     image: Image.asset(
       "assets/car1.png",
-    ),
-    name: "BMW 3 Series",
-    stock: 6,
-  ),
-  Car(
-    image: Image.asset(
-      "assets/car1.png",
-    ),
-    name: "BMW 3 Series",
-    stock: 6,
-  ),
-  Car(
-    image: Image.asset(
-      "assets/car1.png",
-    ),
-    name: "BMW 3 Series",
-    stock: 6,
-  ),
-  Car(
-    image: Image.asset(
-      "assets/car1.png",
-    ),
-    name: "BMW 3 Series",
-    stock: 6,
-  ),
-  Car(
-    image: Image.asset(
-      "assets/car1.png",
-    ),
-    name: "BMW 3 Series",
-    stock: 6,
-  ),
-  Car(
-    image: Image.asset(
-      "assets/car1.png",
+      width: 150.0,
     ),
     name: "BMW 3 Series",
     stock: 6,
@@ -86,7 +94,7 @@ class _CarsModalState extends State<CarsModal>
     ),
     AnimationItem(
       id: "slide-3",
-      entry: 38,
+      entry: 35,
       entryDuration: 300,
       visible: false,
     ),
