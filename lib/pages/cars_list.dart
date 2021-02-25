@@ -1,4 +1,5 @@
 import 'package:car_store/models/animation_item.dart';
+import 'package:car_store/models/car.dart';
 import 'package:car_store/pages/car_detail.dart';
 import 'package:car_store/widgets/cars_modal.dart';
 import 'package:car_store/widgets/fade_slide.dart';
@@ -9,6 +10,65 @@ class CarsList extends StatefulWidget {
   @override
   _CarsListState createState() => _CarsListState();
 }
+
+final List<Car> cars = [
+  Car(
+    image: Image.asset(
+      "assets/car1.png",
+    ),
+    name: "BMW 3 Series",
+    stock: 6,
+  ),
+  Car(
+    image: Image.asset(
+      "assets/carbig.png",
+    ),
+    name: "BMW 3 Series",
+    stock: 6,
+  ),
+  Car(
+    image: Image.asset(
+      "assets/car3.png",
+    ),
+    name: "BMW 3 Series",
+    stock: 6,
+  ),
+  Car(
+    image: Image.asset(
+      "assets/car1.png",
+    ),
+    name: "BMW 3 Series",
+    stock: 6,
+  ),
+  Car(
+    image: Image.asset(
+      "assets/car1.png",
+    ),
+    name: "BMW 3 Series",
+    stock: 6,
+  ),
+  Car(
+    image: Image.asset(
+      "assets/car1.png",
+    ),
+    name: "BMW 3 Series",
+    stock: 6,
+  ),
+  Car(
+    image: Image.asset(
+      "assets/car1.png",
+    ),
+    name: "BMW 3 Series",
+    stock: 6,
+  ),
+  Car(
+    image: Image.asset(
+      "assets/car1.png",
+    ),
+    name: "BMW 3 Series",
+    stock: 6,
+  ),
+];
 
 class _CarsListState extends State<CarsList>
     with SingleTickerProviderStateMixin {
@@ -87,7 +147,7 @@ class _CarsListState extends State<CarsList>
                       ),
                       Spacer(),
                       Text(
-                        "Jimmy",
+                        "Panda",
                         style: TextStyle(
                           fontSize: 19.0,
                           fontWeight: FontWeight.w500,
@@ -96,7 +156,11 @@ class _CarsListState extends State<CarsList>
                       SizedBox(
                         width: 10.0,
                       ),
-                      CircleAvatar()
+                      CircleAvatar(
+                        backgroundImage: NetworkImage(
+                          "https://pbs.twimg.com/profile_images/1349669858368233472/YxgpDmXz_400x400.jpg",
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -111,11 +175,12 @@ class _CarsListState extends State<CarsList>
                   child: Text(
                     "Choose your\nawesome car!",
                     style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 32.0,
-                        color: Color(0xFF333333)
-                        // color: kPrimaryColor,
-                        ),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 32.0,
+                      color: Color(0xFF333333),
+                      height: 1.3,
+                      // color: kPrimaryColor,
+                    ),
                   ),
                 ),
                 SizedBox(
