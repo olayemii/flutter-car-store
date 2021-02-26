@@ -112,9 +112,7 @@ class _CarsListState extends State<CarsList>
                       width: 10.0,
                     ),
                     CircleAvatar(
-                      backgroundImage: NetworkImage(
-                        "https://pbs.twimg.com/profile_images/1349669858368233472/YxgpDmXz_400x400.jpg",
-                      ),
+                      backgroundImage: AssetImage("assets/panda.jpg"),
                     )
                   ],
                 ),

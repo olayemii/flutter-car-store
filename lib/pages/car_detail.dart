@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:car_store/models/animation_item.dart';
 import 'package:car_store/pages/cars_list.dart';
 import 'package:car_store/pages/home.dart';
 import 'package:car_store/utils/constants.dart';
 import 'package:car_store/widgets/fade_slide.dart';
+import 'package:car_store/widgets/scale_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_remixicon/flutter_remixicon.dart';
@@ -186,21 +189,19 @@ class _CarDetailState extends State<CarDetail>
                         height: 30.0,
                       ),
                       Expanded(
-                        child: FadeSlide(
-                          direction:
-                              getItemVisibility("slide-3", animationItems),
-                          offsetX: 0.0,
-                          offsetY: 60,
-                          duration: getSlideDuration("slide-3", animationItems),
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: AnimatedSwitcher(
-                              duration: Duration(milliseconds: 500),
+                        child: AnimatedSwitcher(
+                          duration: Duration(milliseconds: 500),
+                          child: ScaleAnimation(
+                            key: ValueKey(colors[selectedIndex]["asset"]),
+                            direction:
+                                getItemVisibility("slide-3", animationItems),
+                            duration:
+                                getSlideDuration("slide-3", animationItems),
+                            child: Align(
+                              alignment: Alignment.center,
                               child: Image.asset(
                                 colors[selectedIndex]["asset"],
-                                key: ValueKey<String>(
-                                  colors[selectedIndex]["asset"],
-                                ),
+                                key: UniqueKey(),
                               ),
                             ),
                           ),
