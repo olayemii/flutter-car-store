@@ -1,9 +1,13 @@
 import 'package:car_store/models/animation_item.dart';
 import 'package:car_store/models/car.dart';
 import 'package:car_store/pages/car_detail.dart';
+import 'package:car_store/pages/home.dart';
+import 'package:car_store/utils/constants.dart';
+import 'package:car_store/utils/router.dart';
 import 'package:car_store/widgets/cars_modal.dart';
 import 'package:car_store/widgets/fade_slide.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_remixicon/flutter_remixicon.dart';
 
 class CarsList extends StatefulWidget {
@@ -75,17 +79,25 @@ class _CarsListState extends State<CarsList>
                 duration: getSlideDuration("slide-1", animationItems),
                 child: Row(
                   children: [
-                    Container(
-                      height: 55.0,
-                      width: 55.0,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.grey[300],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (_) => Home()),
+                        );
+                      },
+                      child: Container(
+                        height: 55.0,
+                        width: 55.0,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.grey[300],
+                          ),
                         ),
-                      ),
-                      child: Icon(
-                        MIcon.riMenu2Line,
+                        child: Icon(
+                          FlutterIcons.chevron_left_fea,
+                        ),
                       ),
                     ),
                     Spacer(),
@@ -152,27 +164,7 @@ class _CarsListState extends State<CarsList>
                       ),
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.of(context).pushReplacement(
-                            PageRouteBuilder(
-                              transitionsBuilder: (context, animation,
-                                  secondaryAnimation, child) {
-                                return FadeTransition(
-                                  opacity: animation.drive(
-                                    Tween<double>(
-                                      begin: 0,
-                                      end: 1,
-                                    ),
-                                  ),
-                                  child: child,
-                                );
-                              },
-                              pageBuilder: (BuildContext context,
-                                  Animation<double> animation,
-                                  Animation<double> secondaryAnimation) {
-                                return CarDetail();
-                              },
-                            ),
-                          );
+                          animateTransition(context, CarDetail());
                         },
                         child: Column(
                           children: [

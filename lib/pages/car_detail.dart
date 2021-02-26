@@ -1,9 +1,11 @@
 import 'package:car_store/models/animation_item.dart';
+import 'package:car_store/pages/cars_list.dart';
+import 'package:car_store/pages/home.dart';
 import 'package:car_store/utils/constants.dart';
-import 'package:car_store/widgets/cars_modal.dart';
 import 'package:car_store/widgets/fade_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_remixicon/flutter_remixicon.dart';
 
 class CarDetail extends StatefulWidget {
   @override
@@ -14,27 +16,27 @@ List<Map> colors = [
   {
     "name": "black",
     "color": Colors.black,
-    "asset": Image.asset("assets/carbig-black.png"),
+    "asset": "assets/carbig-black.png",
   },
   {
     "name": "green",
     "color": Colors.green,
-    "asset": Image.asset("assets/carbig-green.png"),
+    "asset": "assets/carbig-green.png",
   },
   {
     "name": "grey",
     "color": Colors.grey,
-    "asset": Image.asset("assets/carbig-grey.png"),
+    "asset": "assets/carbig-grey.png",
   },
   {
     "name": "purple",
     "color": Colors.purple,
-    "asset": Image.asset("assets/carbig-purple.png"),
+    "asset": "assets/carbig-purple.png",
   },
   {
     "name": "red",
     "color": Colors.red,
-    "asset": Image.asset("assets/carbig.png"),
+    "asset": "assets/carbig.png",
   }
 ];
 
@@ -109,17 +111,25 @@ class _CarDetailState extends State<CarDetail>
                         duration: getSlideDuration("slide-1", animationItems),
                         child: Row(
                           children: [
-                            Container(
-                              height: 55.0,
-                              width: 55.0,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: Colors.grey[300],
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (_) => CarsList()),
+                                );
+                              },
+                              child: Container(
+                                height: 55.0,
+                                width: 55.0,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: Colors.grey[300],
+                                  ),
                                 ),
-                              ),
-                              child: Icon(
-                                FlutterIcons.chevron_left_fea,
+                                child: Icon(
+                                  FlutterIcons.chevron_left_fea,
+                                ),
                               ),
                             ),
                             Spacer(),
@@ -133,7 +143,7 @@ class _CarDetailState extends State<CarDetail>
                                 ),
                               ),
                               child: Icon(
-                                FlutterIcons.menu_sli,
+                                MIcon.riMenu2Line,
                               ),
                             ),
                           ],
@@ -185,8 +195,13 @@ class _CarDetailState extends State<CarDetail>
                           child: Align(
                             alignment: Alignment.center,
                             child: AnimatedSwitcher(
-                              duration: Duration(milliseconds: 80000),
-                              child: colors[selectedIndex]["asset"],
+                              duration: Duration(milliseconds: 500),
+                              child: Image.asset(
+                                colors[selectedIndex]["asset"],
+                                key: ValueKey<String>(
+                                  colors[selectedIndex]["asset"],
+                                ),
+                              ),
                             ),
                           ),
                         ),

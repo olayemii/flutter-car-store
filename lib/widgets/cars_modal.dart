@@ -2,6 +2,7 @@ import 'package:car_store/models/animation_item.dart';
 import 'package:car_store/models/car.dart';
 import 'package:car_store/pages/cars_list.dart';
 import 'package:car_store/utils/constants.dart';
+import 'package:car_store/utils/router.dart';
 import 'package:car_store/widgets/fade_slide.dart';
 import 'package:flutter/material.dart';
 
@@ -317,27 +318,7 @@ class _CarsModalState extends State<CarsModal>
                   animationController.forward()
                     ..then(
                       (value) {
-                        Navigator.of(context).pushReplacement(
-                          PageRouteBuilder(
-                            transitionsBuilder: (context, animation,
-                                secondaryAnimation, child) {
-                              return FadeTransition(
-                                opacity: animation.drive(
-                                  Tween<double>(
-                                    begin: 0,
-                                    end: 1,
-                                  ),
-                                ),
-                                child: child,
-                              );
-                            },
-                            pageBuilder: (BuildContext context,
-                                Animation<double> animation,
-                                Animation<double> secondaryAnimation) {
-                              return CarsList();
-                            },
-                          ),
-                        );
+                        animateTransition(context, CarsList());
                       },
                     );
                 },
