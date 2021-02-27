@@ -2,14 +2,13 @@
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/olayemii/flutter-ui-kits?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/olayemii/flutter-ui-kits?style=social) ![GitHub followers](https://img.shields.io/github/followers/olayemii?style=social) ![GitHub](https://img.shields.io/github/license/olayemii/flutter-ui-kits)
 
-Free Flutter UI Kits based on designs on UpLabs 💓.
-Repo will be updated daily with new beautiful UI Kits.
+Car store app flow based on a design on Dribbble 💓.
 
 Complete flutter projects are available on my <a href="https://codecanyon.net/user/chris2code/portfolio">Codecanyon.net Page</a>
 
 PRs are welcomed. Issues are welcomed too.
 
-Send me UI suggestions for any uplabs project on <a href="mailto:info@flutterpanda.com">info@flutterpanda.com</a>
+I'm always open to hearing from you, mail me <a href="mailto:info@flutterpanda.com">info@flutterpanda.com</a>
 
 ### Support App
 
@@ -31,7 +30,7 @@ Or Support me on Patreon
 
 ### 👨‍💻 Author
 
-Apps were developed by Olayemi Garuba [![Twitter Follow](https://img.shields.io/twitter/follow/iam_olayemii.svg?style=social)](https://twitter.com/iam_olayemii)
+Olayemi Garuba [![Twitter Follow](https://img.shields.io/twitter/follow/iam_olayemii.svg?style=social)](https://twitter.com/iam_olayemii)
 
 ### 💷 Top Sponsors
 
