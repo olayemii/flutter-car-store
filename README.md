@@ -34,4 +34,5 @@ Or Support me on Patreon
 
 ### 👨‍💻 Author
 
-Olayemi Garuba [![Twitter Follow](https://img.shields.io/twitter/follow/iam_olayemii.svg?style=social)](https://twitter.com/iam_olayemii)
+Olayemi Garuba
+[![Twitter Follow](https://img.shields.io/twitter/follow/iam_olayemii.svg?style=social)](https://twitter.com/iam_olayemii)
