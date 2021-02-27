@@ -39,7 +39,7 @@ Our top sponsors will be listed here
 
 ### Screenshots
 
-1. **[Wrist Watch Store UI Kit](https://github.com/OLayemii/flutter-ui-kits/tree/main/watch_cart_ui)**
+1. **[App Flow](https://res.cloudinary.com/olayemii/image/upload/v1614416896/Untitled_10_mkjl4q.gif)**
 
 ![Wrist Watch Store UI Kit](https://res.cloudinary.com/olayemii/image/upload/v1611749048/assets/watch-2_bkwhgq.png)
 
