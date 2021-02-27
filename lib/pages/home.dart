@@ -87,7 +87,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       visible: false,
     ),
   ];
-
   @override
   void initState() {
     pageController = PageController(

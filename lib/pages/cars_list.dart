@@ -17,7 +17,6 @@ class _CarsListState extends State<CarsList>
   AnimationController animationController;
   Animation animation;
   List<AnimationItem> animationItems = [];
-
   @override
   void initState() {
     animationController = AnimationController(
