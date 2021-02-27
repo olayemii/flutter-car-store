@@ -39,4 +39,4 @@ Our top sponsors will be listed here
 
 ### Screenshots
 
-1. <img src="https://res.cloudinary.com/olayemii/image/upload/v1614416896/Untitled_10_mkjl4q.gif" />
+<img src="https://res.cloudinary.com/olayemii/image/upload/v1614416896/Untitled_10_mkjl4q.gif" />
