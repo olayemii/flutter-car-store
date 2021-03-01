@@ -10,6 +10,13 @@ PRs are welcomed. Issues are welcomed too.
 
 I'm always open to hearing from you, mail me <a href="mailto:info@flutterpanda.com">info@flutterpanda.com</a>
 
+
+### Prefer Videos?
+
+Watch speed code tutorials on youtube
+
+<a href="https://youtu.be/5CIO1fmgm0k">Car Store UI Design w/ Animations Speed Code - Flutter Tutorial - Part 1</a>
+
 ### Support App
 
 > ⭐️ Star the repo to show support. ⭐️
