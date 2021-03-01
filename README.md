@@ -17,6 +17,9 @@ Watch speed code tutorials on youtube
 
 <a href="https://youtu.be/5CIO1fmgm0k">Car Store UI Design w/ Animations Speed Code - Flutter Tutorial - Part 1</a>
 
+<a href="https://youtu.be/uZLb_N43_Ww">Car Store UI Design w/ Animations Speed Code - Flutter Tutorial - Part 2</a>
+
+
 ### Support App
 
 > ⭐️ Star the repo to show support. ⭐️
